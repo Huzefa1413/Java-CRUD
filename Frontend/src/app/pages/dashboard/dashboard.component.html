@@ -1,0 +1,61 @@
+<h2 class="my-4">Employee List</h2>
+<table class="table table-striped table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Date Joined</th>
+      <th>Designation</th>
+      <!-- <th>Department Id</th> -->
+      <th>Department Name</th>
+      <!-- <th>Location Id</th> -->
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.gender }}</td>
+      <td>{{ employee.age }}</td>
+      <td>{{ employee.doj }}</td>
+      <td>{{ employee.designation }}</td>
+      <td>{{ employee.department?.departmentName }}</td>
+      <td>{{ employee.location?.city }}</td>
+      <td>{{ employee.location?.country }}</td>
+      <td>
+        <button
+          (click)="updateEmployee(employee.id)"
+          class="btn btn-info btn-sm"
+        >
+          Update
+        </button>
+        <button
+          (click)="deleteEmployee(employee.id)"
+          class="btn btn-danger btn-sm"
+          style="margin-left: 10px"
+        >
+          Delete
+        </button>
+        <button
+          (click)="employeeDetails(employee.id)"
+          class="btn btn-secondary btn-sm"
+          style="margin-left: 10px"
+        >
+          View
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="logout()" class="btn btn-danger btn-sm">Logout</button>
+<button
+  (click)="createEmployee()"
+  class="btn btn-secondary btn-sm"
+  style="margin-left: 10px"
+>
+  Add New Employee
+</button>

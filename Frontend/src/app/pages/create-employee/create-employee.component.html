@@ -1,0 +1,85 @@
+<div class="col-md-6 offset-md-3 mt-4">
+  <h3>Create Employee</h3>
+  <form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+    <div class="form-group py-2">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="firstName"
+        placeholder="Enter first name"
+      />
+    </div>
+    <div class="form-group py-2">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="lastName"
+        placeholder="Enter last name"
+      />
+    </div>
+
+    <div class="form-group py-2">
+      <label for="gender">Gender</label>
+      <select class="form-control" formControlName="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-group py-2">
+      <label for="age">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="age"
+        placeholder="Enter Age"
+      />
+    </div>
+    <div class="form-group py-2">
+      <label for="doj">Date Joined</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="doj"
+        placeholder="Enter Date"
+      />
+    </div>
+    <div class="form-group py-2">
+      <label for="designation">Designation</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="designation"
+        placeholder="Enter Designation"
+      />
+    </div>
+    <div class="form-group py-2">
+      <label for="departmentId">Department</label>
+      <select class="form-control" formControlName="departmentId" required>
+        <option value="" disabled selected>Select Department</option>
+        <option *ngFor="let department of departments" [value]="department.id">
+          {{ department.departmentName }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group py-2">
+      <label for="locationId">Location</label>
+      <select class="form-control" formControlName="locationId" required>
+        <option value="" disabled selected>Select Location</option>
+        <option *ngFor="let location of locations" [value]="location.id">
+          {{ location.city }}, {{ location.country }}
+        </option>
+      </select>
+    </div>
+    <button
+      class="btn btn-success btn-block py-2"
+      type="submit"
+      [disabled]="employeeForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

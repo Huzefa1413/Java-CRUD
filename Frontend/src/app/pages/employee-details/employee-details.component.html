@@ -1,0 +1,43 @@
+<h3 class="my-4">Employee Details</h3>
+<div class="card m-auto" style="width: fit-content">
+  <div class="card-body">
+    <div class="mb-2">
+      <label><b>First Name:</b></label>
+      <span style="margin-left: 10px">{{ employee?.firstName }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Last Name:</b></label>
+      <span style="margin-left: 10px">{{ employee?.lastName }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Gender:</b></label>
+      <span style="margin-left: 10px">{{ employee?.gender }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Age:</b></label>
+      <span style="margin-left: 10px">{{ employee?.age }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Date Joined:</b></label>
+      <span style="margin-left: 10px">{{ employee?.doj }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Designation:</b></label>
+      <span style="margin-left: 10px">{{ employee?.designation }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Department Name:</b></label>
+      <span style="margin-left: 10px">{{
+        employee?.department?.departmentName
+      }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>City:</b></label>
+      <span style="margin-left: 10px">{{ employee?.location?.city }}</span>
+    </div>
+    <div class="mb-2">
+      <label><b>Country:</b></label>
+      <span style="margin-left: 10px">{{ employee?.location?.country }}</span>
+    </div>
+  </div>
+</div>
