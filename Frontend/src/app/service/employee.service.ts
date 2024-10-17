@@ -27,6 +27,22 @@ export class EmployeeService {
     }
   }
 
+  getEmployeesWithPagination(
+    offset: number,
+    pageSize: number
+  ): Observable<any> {
+    const headers = this.createAuthorizationHeader();
+    const url = `${this.baseUrl}?offset=${offset}&pageSize=${pageSize}`;
+    if (headers) {
+      return this.httpClient.get(url, { headers });
+    } else {
+      console.error('Authorization token is missing.');
+      return new Observable((observer) => {
+        observer.error('Authorization token is missing.');
+      });
+    }
+  }
+
   createEmployee(employee: Employee): Observable<Object> {
     const headers = this.createAuthorizationHeader();
     if (headers) {
@@ -112,6 +128,23 @@ export class EmployeeService {
     } else {
       console.log('Token not found');
       return null;
+    }
+  }
+
+  searchEmployees(
+    query: string,
+    offset: number,
+    pageSize: number
+  ): Observable<any> {
+    const headers = this.createAuthorizationHeader();
+    const url = `${this.baseUrl}/search?query=${query}&offset=${offset}&pageSize=${pageSize}`;
+    if (headers) {
+      return this.httpClient.get(url, { headers });
+    } else {
+      console.error('Authorization token is missing.');
+      return new Observable((observer) => {
+        observer.error('Authorization token is missing.');
+      });
     }
   }
 }

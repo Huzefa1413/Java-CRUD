@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MycrudappApplication",
+            "request": "launch",
+            "mainClass": "com.example.mycrudapp.MycrudappApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-MycrudappApplication<mycrudapp>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

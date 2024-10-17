@@ -1,0 +1,33 @@
+.search-container input {
+  border-radius: 0.25rem;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.pagination .page-link {
+  color: #000000;
+}
+
+.pagination .page-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
